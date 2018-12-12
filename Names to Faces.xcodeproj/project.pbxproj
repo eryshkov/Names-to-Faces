@@ -14,6 +14,7 @@
 		5C7B777721C10257007C6BA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C7B777521C10257007C6BA0 /* LaunchScreen.storyboard */; };
 		5C7B777F21C1046A007C6BA0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5C7B777E21C1046A007C6BA0 /* README.md */; };
 		5C7B778221C10743007C6BA0 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7B778121C10743007C6BA0 /* PersonCell.swift */; };
+		5C7B778721C110EB007C6BA0 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7B778621C110EB007C6BA0 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		5C7B777821C10257007C6BA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C7B777E21C1046A007C6BA0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5C7B778121C10743007C6BA0 /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		5C7B778621C110EB007C6BA0 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,11 +44,11 @@
 		5C7B776021C10253007C6BA0 = {
 			isa = PBXGroup;
 			children = (
+				5C7B778021C10499007C6BA0 /* screens */,
+				5C7B777E21C1046A007C6BA0 /* README.md */,
 				5C7B778521C10798007C6BA0 /* Model */,
 				5C7B778421C10789007C6BA0 /* View */,
 				5C7B778321C1077D007C6BA0 /* Controller */,
-				5C7B778021C10499007C6BA0 /* screens */,
-				5C7B777E21C1046A007C6BA0 /* README.md */,
 				5C7B776B21C10253007C6BA0 /* Other */,
 				5C7B776A21C10253007C6BA0 /* Products */,
 			);
@@ -98,6 +100,7 @@
 		5C7B778521C10798007C6BA0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5C7B778621C110EB007C6BA0 /* Person.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			files = (
 				5C7B778221C10743007C6BA0 /* PersonCell.swift in Sources */,
 				5C7B776F21C10254007C6BA0 /* ViewController.swift in Sources */,
+				5C7B778721C110EB007C6BA0 /* Person.swift in Sources */,
 				5C7B776D21C10254007C6BA0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
