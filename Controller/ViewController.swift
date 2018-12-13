@@ -12,6 +12,12 @@ class ViewController: UICollectionViewController {
     
     var people = [Person]()
     
+    func save() {
+        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: people, requiringSecureCoding: false) {
+            let defaults = UserDefaults.standard
+            defaults.set(savedData, forKey: "people")
+        }
+    }
     
     @objc func addNewPerson() {
         let picker = UIImagePickerController()
@@ -29,6 +35,14 @@ class ViewController: UICollectionViewController {
         super.viewDidLoad()
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPerson))
+        
+        let defaults = UserDefaults.standard
+        if let savedPeople = defaults.object(forKey: "people") as? Data {
+            if let decodedPeople = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedPeople) as? [Person] {
+                people = decodedPeople ?? [Person]()
+            }
+        }
+        
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -63,6 +77,7 @@ class ViewController: UICollectionViewController {
             let newName = ac.textFields![0]
             person.name = newName.text!
             self.collectionView.reloadData()
+            self.save()
         }))
         
         present(ac, animated: true)
@@ -87,6 +102,8 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         collectionView.reloadData()
         
         dismiss(animated: true)
+        
+        save()
     }
     
 
